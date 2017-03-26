@@ -1,0 +1,115 @@
+2017-03-27 00:51:07 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists in C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\db\Command.php:846
+Stack trace:
+#0 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\db\Command.php(846): PDOStatement->execute()
+#1 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\db\Migration.php(274): yii\db\Command->execute()
+#2 C:\xampp\htdocs\pagos\console\migrations\m170326_090406_tuition_payments.php(22): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(654): m170326_090406_tuition_payments->up()
+#4 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->migrateUp('m170326_090406_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#9 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#11 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#12 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\xampp\htdocs\pagos\yii(27): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(255) NOT NULL UNIQUE,
+	`auth_key` varchar(32) NOT NULL,
+	`password_hash` varchar(255) NOT NULL,
+	`password_reset_token` varchar(255) UNIQUE,
+	`email` varchar(255) NOT NULL UNIQUE,
+	`status` smallint(6) NOT NULL DEFAULT 1,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB in C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\db\Schema.php:636
+Stack trace:
+#0 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\db\Command.php(856): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\db\Migration.php(274): yii\db\Command->execute()
+#2 C:\xampp\htdocs\pagos\console\migrations\m170326_090406_tuition_payments.php(22): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(654): m170326_090406_tuition_payments->up()
+#4 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(166): yii\console\controllers\BaseMigrateController->migrateUp('m170326_090406_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#9 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#11 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#12 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\xampp\htdocs\pagos\yii(27): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2017-03-27 00:50:59 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'ANDROID_HOME' => 'C:\\Users\\Miguel\\AppData\\Local\\Android\\sdk'
+    'APPDATA' => 'C:\\Users\\Miguel\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'MIGUEREF'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Miguel'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_121'
+    'LOCALAPPDATA' => 'C:\\Users\\Miguel\\AppData\\Local'
+    'LOGONSERVER' => '\\\\MIGUEREF'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Miguel\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\xampp\\php;C:\\xampp;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\nodejs\\;C:\\apache-ant-1.9.7\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\Users\\Miguel\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Users\\Miguel\\AppData\\Local\\Android\\sdk\\tools;C:\\Users\\Miguel\\AppData\\Local\\atom\\bin;C:\\Users\\Miguel\\Documents\\curso mobile apps\\adt-bundle-windows-x86-20140321\\sdk\\platform-tools;C:\\Users\\Miguel\\Documents\\curso mobile apps\\adt-bundle-windows-x86-20140321\\sdk\\tools;C:\\xampp\\php;C:\\Users\\Miguel\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Miguel\\AppData\\Roaming\\npm'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 69 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '4501'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\Miguel\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Miguel\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'Migueref'
+    'USERDOMAIN_ROAMINGPROFILE' => 'Migueref'
+    'USERNAME' => 'Miguel'
+    'USERPROFILE' => 'C:\\Users\\Miguel'
+    'VBOX_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\pagos\\'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\pagos\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\pagos\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\pagos\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\pagos\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1490568658.1269
+    'REQUEST_TIME' => 1490568658
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\pagos\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
