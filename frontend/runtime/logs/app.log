@@ -1,0 +1,90 @@
+2017-03-26 10:24:31 [::1][1][-][error][yii\base\ErrorException:2] yii\base\ErrorException: session_regenerate_id(): Session object destruction failed.  ID: files (path: C:\xampp\tmp) in C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\web\Session.php:283
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'session_regener...', 'C:\\xampp\\htdocs...', 283, Array)
+#1 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\web\Session.php(283): session_regenerate_id(true)
+#2 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\web\User.php(618): yii\web\Session->regenerateID(true)
+#3 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\web\User.php(241): yii\web\User->switchIdentity(Object(common\models\User), 0)
+#4 C:\xampp\htdocs\pagos\frontend\controllers\SiteController.php(154): yii\web\User->login(Object(common\models\User))
+#5 [internal function]: frontend\controllers\SiteController->actionSignup()
+#6 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('signup', Array)
+#9 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('site/signup', Array)
+#10 C:\xampp\htdocs\pagos\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\xampp\htdocs\pagos\frontend\web\index.php(17): yii\base\Application->run()
+#12 {main}
+2017-03-26 10:24:28 [::1][1][-][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'a3pBa3FNQzBeAHQmRRR3X1MqLDspEitZOhd2HRIDDlM.NBkOEBkSWA=='
+    'SignupForm' => [
+        'username' => 'migueref'
+        'email' => 'reafmiguel@gmail.com'
+        'password' => '123456'
+    ]
+    'signup-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'a177f271a83c51666ac9d49f840ea9facb5dd8e238642a0a493be434eb3bd453a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6E_XyQWkUXkKioF3-PqZMwb9CDn9ai7k\";}'
+    'advanced-frontend' => 'mg93kl4120lbfi7qg7h0a2e7s3'
+    '_csrf-frontend' => '61a8393287dd5c147701d679329299cf6947f9ce6b2da8291238b993f19d0b15a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5z5M4Y4o8PmPX_hiQm7vcNMcUNXeaTQh\";}'
+    'advanced-backend' => '07mbaesi7q991eqkbf2hjje730'
+    '_csrf-backend' => '8bb0c5b41c861383bed37c3a36aff4b598b73e62932fa5eb1d320c0b10eb4beda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"efCqLeyM6UOJkLNJwn3fMXFHD0t4wIMo\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '201'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/pagos/frontend/web/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_csrf=a177f271a83c51666ac9d49f840ea9facb5dd8e238642a0a493be434eb3bd453a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226E_XyQWkUXkKioF3-PqZMwb9CDn9ai7k%22%3B%7D; advanced-frontend=mg93kl4120lbfi7qg7h0a2e7s3; _csrf-frontend=61a8393287dd5c147701d679329299cf6947f9ce6b2da8291238b993f19d0b15a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%225z5M4Y4o8PmPX_hiQm7vcNMcUNXeaTQh%22%3B%7D; advanced-backend=07mbaesi7q991eqkbf2hjje730; _csrf-backend=8bb0c5b41c861383bed37c3a36aff4b598b73e62932fa5eb1d320c0b10eb4beda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22efCqLeyM6UOJkLNJwn3fMXFHD0t4wIMo%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\xampp\\php;C:\\xampp;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Program Files\\nodejs\\;C:\\apache-ant-1.9.7\\bin;C:\\Program Files\\Java\\jdk1.8.0_121\\bin;C:\\Users\\Miguel\\AppData\\Local\\Android\\sdk\\platform-tools;C:\\Users\\Miguel\\AppData\\Local\\Android\\sdk\\tools;C:\\Users\\Miguel\\AppData\\Local\\atom\\bin;C:\\Users\\Miguel\\Documents\\curso mobile apps\\adt-bundle-windows-x86-20140321\\sdk\\platform-tools;C:\\Users\\Miguel\\Documents\\curso mobile apps\\adt-bundle-windows-x86-20140321\\sdk\\tools;C:\\xampp\\php;C:\\Users\\Miguel\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Miguel\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/pagos/frontend/web/index.php'
+    'REMOTE_PORT' => '59180'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/pagos/frontend/web/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/pagos/frontend/web/index.php'
+    'PHP_SELF' => '/pagos/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1490516668.101
+    'REQUEST_TIME' => 1490516668
+]
