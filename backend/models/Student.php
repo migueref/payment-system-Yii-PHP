@@ -11,8 +11,8 @@ use Yii;
  * @property string $registration_number
  * @property string $enrollment_status
  * @property integer $idUser
- * @property integer $created_at
- * @property integer $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $status
  *
  * @property User $idUser0
@@ -34,8 +34,8 @@ class Student extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idUser', 'created_at', 'updated_at', 'status'], 'integer'],
-            [['created_at', 'updated_at'], 'required'],
+            [['idUser', 'status'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
             [['registration_number', 'enrollment_status'], 'string', 'max' => 45],
             [['idUser'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['idUser' => 'id']],
         ];

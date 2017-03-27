@@ -18,9 +18,9 @@ class TuitionSearch extends Tuition
     public function rules()
     {
         return [
-            [['id', 'idCourse', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['id', 'idCourse', 'status'], 'integer'],
             [['total'], 'number'],
-            [['tuition_status', 'month'], 'safe'],
+            [['tuition_status', 'month', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

@@ -8,6 +8,9 @@ use Yii;
  * This is the model class for table "user".
  *
  * @property integer $id
+ * @property string $firstname
+ * @property string $middlename
+ * @property string $lastname
  * @property string $username
  * @property string $auth_key
  * @property string $password_hash
@@ -38,6 +41,7 @@ class User extends \yii\db\ActiveRecord
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
+            [['firstname', 'middlename', 'lastname'], 'string', 'max' => 70],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
@@ -53,6 +57,9 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'firstname' => 'Firstname',
+            'middlename' => 'Middlename',
+            'lastname' => 'Lastname',
             'username' => 'Username',
             'auth_key' => 'Auth Key',
             'password_hash' => 'Password Hash',

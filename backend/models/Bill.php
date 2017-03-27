@@ -11,8 +11,8 @@ use Yii;
  * @property integer $idPayment
  * @property string $reference
  * @property string $comment
- * @property integer $created_at
- * @property integer $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $status
  *
  * @property Payment $idPayment0
@@ -33,9 +33,9 @@ class Bill extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idPayment', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['idPayment', 'status'], 'integer'],
             [['comment'], 'string'],
-            [['created_at', 'updated_at'], 'required'],
+            [['created_at', 'updated_at'], 'safe'],
             [['reference'], 'string', 'max' => 100],
             [['idPayment'], 'exist', 'skipOnError' => true, 'targetClass' => Payment::className(), 'targetAttribute' => ['idPayment' => 'id']],
         ];

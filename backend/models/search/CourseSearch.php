@@ -18,8 +18,8 @@ class CourseSearch extends Course
     public function rules()
     {
         return [
-            [['id', 'created_at', 'updated_at', 'status'], 'integer'],
-            [['shortname', 'fullname'], 'safe'],
+            [['id', 'status'], 'integer'],
+            [['shortname', 'fullname', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

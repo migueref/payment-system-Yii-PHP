@@ -18,8 +18,8 @@ class BillSearch extends Bill
     public function rules()
     {
         return [
-            [['id', 'idPayment', 'created_at', 'updated_at', 'status'], 'integer'],
-            [['reference', 'comment'], 'safe'],
+            [['id', 'idPayment', 'status'], 'integer'],
+            [['reference', 'comment', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

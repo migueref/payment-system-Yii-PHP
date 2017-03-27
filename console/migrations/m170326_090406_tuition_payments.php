@@ -16,8 +16,8 @@ class m170326_090406_tuition_payments extends Migration
         'registration_number'=>$this->string(45),
         'enrollment_status'=>$this->string(45),
         'idUser'=>$this->integer(),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
       //payment table
@@ -34,8 +34,8 @@ class m170326_090406_tuition_payments extends Migration
         'payment_method'=>$this->string(45),
         'comment'=>$this->text(),
         'idUser'=>$this->integer(),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
       //bill table
@@ -44,8 +44,8 @@ class m170326_090406_tuition_payments extends Migration
         'idPayment'=>$this->integer(),
         'reference'=>$this->string(100),
         'comment'=>$this->text(),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
       //course table
@@ -53,8 +53,8 @@ class m170326_090406_tuition_payments extends Migration
         'id'=>$this->primaryKey(),
         'shortname'=>$this->string(50),
         'fullname'=>$this->string(100),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
       // tuition table
@@ -64,8 +64,8 @@ class m170326_090406_tuition_payments extends Migration
         'total'=>$this->float(),
         'tuition_status'=>$this->string(45),
         'month'=>$this->string(45),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
       // Student course table
@@ -73,8 +73,8 @@ class m170326_090406_tuition_payments extends Migration
         'id'=>$this->primaryKey(),
         'idStudent'=>$this->integer(),
         'idCourse'=>$this->integer(),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
 
@@ -83,8 +83,8 @@ class m170326_090406_tuition_payments extends Migration
         'id'=>$this->primaryKey(),
         'idStudentCourse'=>$this->integer(),
         'total'=>$this->float(),
-        'created_at' => $this->integer()->notNull(),
-        'updated_at' => $this->integer()->notNull(),
+        'created_at' => $this->date(),
+        'updated_at' => $this->date(),
         'status' => $this->smallInteger()->notNull()->defaultValue(1),
       ],$tableOptions);
       //Foreign Keys

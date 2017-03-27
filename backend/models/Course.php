@@ -10,8 +10,8 @@ use Yii;
  * @property integer $id
  * @property string $shortname
  * @property string $fullname
- * @property integer $created_at
- * @property integer $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $status
  *
  * @property StudentCourse[] $studentCourses
@@ -33,8 +33,8 @@ class Course extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at', 'updated_at'], 'required'],
-            [['created_at', 'updated_at', 'status'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
+            [['status'], 'integer'],
             [['shortname'], 'string', 'max' => 50],
             [['fullname'], 'string', 'max' => 100],
         ];
@@ -69,5 +69,12 @@ class Course extends \yii\db\ActiveRecord
     public function getTuitions()
     {
         return $this->hasMany(Tuition::className(), ['idCourse' => 'id']);
+    }
+    public function beforeSave($insert){
+      if ($this->isNewRecord)
+        $this->created_at = new \yii\db\Expression('NOW()');
+      $this->updated_at = new \yii\db\Expression('NOW()');
+      parent::beforeSave($insert);
+      return true;
     }
 }

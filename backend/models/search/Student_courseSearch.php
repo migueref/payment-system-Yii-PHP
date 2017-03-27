@@ -18,7 +18,8 @@ class Student_courseSearch extends Student_course
     public function rules()
     {
         return [
-            [['id', 'idStudent', 'idCourse', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['id', 'idStudent', 'idCourse', 'status'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
         ];
     }
 

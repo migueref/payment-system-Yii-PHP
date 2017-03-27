@@ -18,8 +18,9 @@ class DiscountSearch extends Discount
     public function rules()
     {
         return [
-            [['id', 'idStudentCourse', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['id', 'idStudentCourse', 'status'], 'integer'],
             [['total'], 'number'],
+            [['created_at', 'updated_at'], 'safe'],
         ];
     }
 

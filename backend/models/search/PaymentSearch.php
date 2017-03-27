@@ -18,8 +18,8 @@ class PaymentSearch extends Payment
     public function rules()
     {
         return [
-            [['id', 'idTuition', 'idUser', 'created_at', 'updated_at', 'status'], 'integer'],
-            [['tuition_number', 'type', 'voucher_number', 'payment_method', 'comment'], 'safe'],
+            [['id', 'idTuition', 'idUser', 'status'], 'integer'],
+            [['tuition_number', 'type', 'voucher_number', 'payment_method', 'comment', 'created_at', 'updated_at'], 'safe'],
             [['subtotal', 'discount', 'extra_charges', 'total'], 'number'],
         ];
     }

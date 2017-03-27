@@ -10,8 +10,8 @@ use Yii;
  * @property integer $id
  * @property integer $idStudentCourse
  * @property double $total
- * @property integer $created_at
- * @property integer $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $status
  *
  * @property StudentCourse $idStudentCourse0
@@ -32,9 +32,9 @@ class Discount extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idStudentCourse', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['idStudentCourse', 'status'], 'integer'],
             [['total'], 'number'],
-            [['created_at', 'updated_at'], 'required'],
+            [['created_at', 'updated_at'], 'safe'],
             [['idStudentCourse'], 'exist', 'skipOnError' => true, 'targetClass' => StudentCourse::className(), 'targetAttribute' => ['idStudentCourse' => 'id']],
         ];
     }

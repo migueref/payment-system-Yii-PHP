@@ -19,8 +19,8 @@ use Yii;
  * @property string $payment_method
  * @property string $comment
  * @property integer $idUser
- * @property integer $created_at
- * @property integer $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $status
  *
  * @property Bill[] $bills
@@ -42,10 +42,10 @@ class Payment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idTuition', 'idUser', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['idTuition', 'idUser', 'status'], 'integer'],
             [['subtotal', 'discount', 'extra_charges', 'total'], 'number'],
             [['comment'], 'string'],
-            [['created_at', 'updated_at'], 'required'],
+            [['created_at', 'updated_at'], 'safe'],
             [['tuition_number', 'type', 'voucher_number', 'payment_method'], 'string', 'max' => 45],
             [['idUser'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['idUser' => 'id']],
         ];

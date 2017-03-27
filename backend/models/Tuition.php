@@ -12,8 +12,8 @@ use Yii;
  * @property double $total
  * @property string $tuition_status
  * @property string $month
- * @property integer $created_at
- * @property integer $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property integer $status
  *
  * @property Course $idCourse0
@@ -34,9 +34,9 @@ class Tuition extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idCourse', 'created_at', 'updated_at', 'status'], 'integer'],
+            [['idCourse', 'status'], 'integer'],
             [['total'], 'number'],
-            [['created_at', 'updated_at'], 'required'],
+            [['created_at', 'updated_at'], 'safe'],
             [['tuition_status', 'month'], 'string', 'max' => 45],
             [['idCourse'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['idCourse' => 'id']],
         ];
