@@ -23,12 +23,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'registration_number',
-            'enrollment_status',
-            'idUser',
-            'created_at',
+            [
+              'label' => 'Matrícula',
+              'attribute' => 'registration_number',
+              'value'=> 'registration_number'
+            ],
+            [
+              'label' => 'Estado',
+              'attribute' => 'enrollment_status',
+              'value'=> 'enrollment_status'
+            ],
+            [
+              'label' => 'Usuario',
+              'attribute' => 'idUser',
+              'value'=> 'idUser'
+            ],
+            [
+              'label' => 'Fecha de creación ',
+              'attribute' => 'created_at',
+              'value'=> 'created_at'
+            ],
+            [
+              'label' => 'Última actualización',
+              'attribute' => 'updated_at',
+              'value'=> 'updated_at'
+            ],
             // 'updated_at',
             // 'status',
 

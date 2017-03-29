@@ -61,4 +61,11 @@ class Discount extends \yii\db\ActiveRecord
     {
         return $this->hasOne(StudentCourse::className(), ['id' => 'idStudentCourse']);
     }
+    public function beforeSave($insert){
+      if ($this->isNewRecord)
+        $this->created_at = new \yii\db\Expression('NOW()');
+      $this->updated_at = new \yii\db\Expression('NOW()');
+      parent::beforeSave($insert);
+      return true;
+    }
 }

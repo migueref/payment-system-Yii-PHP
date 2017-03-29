@@ -12,20 +12,18 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'shortname')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'shortname')->textInput(['maxlength' => true])->hint('Ingrese clave del curso')->label('Clave del curso') ?>
 
-    <?= $form->field($model, 'fullname')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'fullname')->textInput(['maxlength' => true])->hint('Ingrese nombre del curso')->label('Nombre del curso') ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
 
-    <?= $form->field($model, 'updated_at')->textInput() ?>
 
     <?php if(!$model->isNewRecord)
             echo $form->field($model, 'status')->checkbox();
      ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Crear') : Yii::t('app', 'Actualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -90,4 +90,11 @@ class Payment extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'idUser']);
     }
+    public function beforeSave($insert){
+      if ($this->isNewRecord)
+        $this->created_at = new \yii\db\Expression('NOW()');
+      $this->updated_at = new \yii\db\Expression('NOW()');
+      parent::beforeSave($insert);
+      return true;
+    }
 }

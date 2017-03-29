@@ -86,4 +86,11 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Student::className(), ['idUser' => 'id']);
     }
+    public function beforeSave($insert){
+      if ($this->isNewRecord)
+        $this->created_at = new \yii\db\Expression('NOW()');
+      $this->updated_at = new \yii\db\Expression('NOW()');
+      parent::beforeSave($insert);
+      return true;
+    }
 }
