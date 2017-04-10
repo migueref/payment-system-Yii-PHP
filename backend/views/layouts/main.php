@@ -28,14 +28,17 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Cyberdreams',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+      ['label' => 'Home', 'url' =>['/site/index']],
+      ['label' => 'Pagos', 'url' =>['/payment/index']],
+      ['label' => 'Estudiantes', 'url' =>['/student/index']],
+      ['label' => 'Colegiaturas', 'url' =>['/tuition/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

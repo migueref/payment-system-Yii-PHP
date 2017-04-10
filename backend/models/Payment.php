@@ -3,7 +3,6 @@
 namespace backend\models;
 
 use Yii;
-
 /**
  * This is the model class for table "payment".
  *

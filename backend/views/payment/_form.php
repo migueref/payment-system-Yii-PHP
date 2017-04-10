@@ -12,31 +12,27 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idTuition')->textInput() ?>
+    <?= $form->field($model, 'idTuition')->textInput()->hint('Please enter your name')->label('idMatrícula') ?>
 
-    <?= $form->field($model, 'tuition_number')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'tuition_number')->textInput(['maxlength' => true])->hint('Número de matrícula')->label('Matrícula') ?>
 
-    <?= $form->field($model, 'subtotal')->textInput() ?>
+    <?= $form->field($model, 'subtotal')->textInput()->hint('Ingrese total sin descuentos o recargos')->label('Subtotal') ?>
 
-    <?= $form->field($model, 'discount')->textInput() ?>
+    <?= $form->field($model, 'discount')->textInput()->label('Descuento') ?>
 
-    <?= $form->field($model, 'extra_charges')->textInput() ?>
+    <?= $form->field($model, 'extra_charges')->textInput()->label('Cargos extra') ?>
 
-    <?= $form->field($model, 'total')->textInput() ?>
+    <?= $form->field($model, 'total')->textInput()->label('Total') ?>
 
-    <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'type')->textInput(['maxlength' => true])->label('Tipo') ?>
 
-    <?= $form->field($model, 'voucher_number')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'voucher_number')->textInput(['maxlength' => true])->label('Número de comprobante') ?>
 
-    <?= $form->field($model, 'payment_method')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'payment_method')->textInput(['maxlength' => true])->label('Método de pago') ?>
 
-    <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'comment')->textarea(['rows' => 6])->label('Descripción') ?>
 
-    <?= $form->field($model, 'idUser')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'idUser')->textInput()->label('Usuario') ?>
 
     <?= $form->field($model, 'status')->textInput() ?>
 
